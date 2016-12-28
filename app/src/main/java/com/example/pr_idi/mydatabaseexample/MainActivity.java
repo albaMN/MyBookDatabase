@@ -11,7 +11,7 @@ import android.widget.ArrayAdapter;
 
 public class MainActivity extends ListActivity {
     private BookData bookData;
-    //EHHH SEXY LADY
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +28,7 @@ public class MainActivity extends ListActivity {
                 android.R.layout.simple_list_item_1, values);
         setListAdapter(adapter);
     }
-    // resem perq funcioni
+
     // Basic method to add pseudo-random list of books so that
     // you have an example of insertion and deletion
 
