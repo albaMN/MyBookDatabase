@@ -28,7 +28,7 @@ public class MainActivity extends ListActivity {
                 android.R.layout.simple_list_item_1, values);
         setListAdapter(adapter);
     }
-    // Gerard
+    // Gerard i ALBAAAAAAAAAAAAAAA
     // Basic method to add pseudo-random list of books so that
     // you have an example of insertion and deletion
 
