@@ -23,6 +23,13 @@
             android:text="Delete First"
             android:onClick="onClick"/>
 
+        <Button
+            android:text="Search"
+            android:layout_width="112dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/search"
+            android:onClick="searchActivity"/>
+
     </LinearLayout>
 
     <ListView

@@ -5,7 +5,9 @@ import java.util.List;
 import java.util.Random;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ArrayAdapter;
 
@@ -55,10 +57,16 @@ public class MainActivity extends ListActivity {
                     adapter.remove(book);
                 }
                 break;
+           // case R.id.search:
+
+
         }
         adapter.notifyDataSetChanged();
     }
-
+    public void searchActivity (View view) {
+        Intent intent = new Intent(this, RecyclerActivity.class);
+        startActivity(intent);
+    }
     // Life cycle methods. Check whether it is necessary to reimplement them
 
     @Override
