@@ -28,9 +28,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
         public ViewHolder(View itemView) {
             super(itemView);
-            title = (TextView) itemView.findViewById(R.id.title);
+           // title = (TextView) itemView.findViewById(R.id.title);
             author = (TextView) itemView.findViewById(R.id.author);
-            year = (TextView) itemView.findViewById(R.id.year);
+            //year = (TextView) itemView.findViewById(R.id.year);
 
         }
     }
@@ -39,14 +39,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     //representa la vista de cada item
     public Adapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.activity_recycler, parent,false);
+        View view = inflater.inflate(R.layout.item_recycler, parent,false);
         return new ViewHolder(view);
     }
 
     @Override
     //conte la informacio de cada item del recycler
     public void onBindViewHolder(Adapter.ViewHolder holder, int position) {
-
+        holder.author.setText(list.get(position).getAuthor());
     }
 
     @Override

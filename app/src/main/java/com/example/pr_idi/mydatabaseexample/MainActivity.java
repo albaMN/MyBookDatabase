@@ -20,6 +20,7 @@ public class MainActivity extends ListActivity {
         setContentView(R.layout.main);
 
         bookData = new BookData(this);
+        //ens permet llegir a la database
         bookData.open();
 
         List<Book> values = bookData.getAllBooks();
@@ -57,9 +58,6 @@ public class MainActivity extends ListActivity {
                     adapter.remove(book);
                 }
                 break;
-           // case R.id.search:
-
-
         }
         adapter.notifyDataSetChanged();
     }

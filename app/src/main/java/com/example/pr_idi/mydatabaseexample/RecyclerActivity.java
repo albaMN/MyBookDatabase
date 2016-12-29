@@ -4,33 +4,34 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerActivity extends AppCompatActivity {
+    private BookData bookData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler);
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.lista_mensajes);
+        bookData = new BookData(this);
+        bookData.open();
+        List<Book> values = bookData.getAllBooks();
+
+        Book book = new Book();
+        book = bookData.createBook("Ring Men", "Rowling");
+        values.add(book);
+
+
+
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler);
         //els numero de items del recycler es dinamic per aixo fico false
         recyclerView.setHasFixedSize(false);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new Adapter(getList()));
+        recyclerView.setAdapter(new Adapter(values));
     }
 
-    private List<Book> getList () {
-        Book book = new Book();
-        book.setId(123);
-        book.setAuthor("jkrowling");
-        book.setTitle("señor anillos");
-        List <Book> list = new ArrayList<>();
-        list.add(book);
-        list.add(book);
-        list.add(book);
-        return list;
-    }
 }
